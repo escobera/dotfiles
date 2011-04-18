@@ -67,7 +67,6 @@ map <leader>tm :tabmove
 " autocmd FileType ruby setlocal foldmethod=syntax
 " autocmd FileType css  setlocal foldmethod=indent shiftwidth=2 tabstop=2
 
-" @rafaelescobar changes
-
-"colorscheme
+" @rafaelescobar change
+colorscheme railscasts
 
