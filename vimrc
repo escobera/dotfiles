@@ -33,7 +33,7 @@ set scrolloff=3                   " Show 3 lines of context around the cursor.
 
 set title                         " Set the terminal's title
 
-set visualbell                    " No beeping.
+set visualbell t_vb=                         " No bell (at all).
 
 set nobackup                      " Don't make a backup before overwriting a file.
 set nowritebackup                 " And again.
@@ -57,7 +57,8 @@ set laststatus=2                  " Show the status line all the time
 
 " @rafaelescobar change
 colorscheme railscasts
-let mapleader=","
+
+let mapleader="," " Changing the leader key
 
 " Tab mappings.
 map <leader>n :tabnew<cr>
