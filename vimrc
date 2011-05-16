@@ -65,3 +65,6 @@ map <leader>n :tabnew<cr>
 map <leader>w :tabclose<cr>
 map <leader>l :tabnext<cr>
 map <leader>h :tabprevious<cr>
+
+" NerdTree
+map <F2> :NERDTreeToggle<cr>
