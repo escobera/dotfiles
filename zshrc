@@ -30,6 +30,7 @@ alias mongostart="sudo launchctl start org.mongodb.mongod"
 alias mongostop="sudo launchctl stop org.mongodb.mongod"
 alias apache2ctl="sudo /opt/local/apache2/bin/apachectl"
 alias l="ls -laHGq"
+alias vim="mvim -v"
 
 bindkey "^[[3~" delete-char
 export LSCOLORS="cxgxbxdxGxeHeHxbGxbHeH"

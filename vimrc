@@ -3,7 +3,7 @@
 set nocompatible                  " Must come first because it changes other options. Removes Vi compatibility
 
 filetype off                      " Better compatibility with linux
-silent! call pathogen#runtime_append_all_bundles() " Pathogen call (require all bundles)
+call pathogen#runtime_append_all_bundles() " Pathogen call (require all bundles)
 
 syntax enable                     " Turn on syntax highlighting.
 filetype plugin indent on         " Turn on file type detection.
