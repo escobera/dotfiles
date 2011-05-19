@@ -33,4 +33,5 @@ alias l="ls -laHGq"
 
 bindkey "^[[3~" delete-char
 export LSCOLORS="cxgxbxdxGxeHeHxbGxbHeH"
+__rvm_project_rvmrc
 
