@@ -1,12 +1,8 @@
-set visualbell t_vb=                         " No bell (at all).
+set visualbell t_vb=               " No bell (at all).
+set t_Co=256                       " 256 colors terminal
+color wombat256
 
-"set nobackup                      " Don't make a backup before overwriting a file.
-"set nowritebackup                 " And again.
-
-" @rafaelescobar change
-color railscasts
-
-let mapleader="," " Changing the leader key
+let mapleader=","                  " Changing the leader key
 
 " Tab mappings.
 " map <leader>n :tabnew<cr>
