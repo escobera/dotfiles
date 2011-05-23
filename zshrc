@@ -10,7 +10,7 @@ export ZSH_THEME="escobera"
 plugins=(git rails3)
 
 # Customize to your needs...
-export PATH=/opt/local/bin:/opt/local/sbin:/opt/local/lib/postgresql83/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/mongodb/bin
+export PATH=/opt/local/bin:/opt/local/sbin:/opt/local/lib/postgresql83/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin:/usr/X11/bin:/usr/local/mongodb/bin
 
 export APXS=/opt/local/apache2/bin/apxs
 #rvm 

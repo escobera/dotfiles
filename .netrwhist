@@ -1,4 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_cnt =3
 let g:netrw_dirhist_1='/Users/rafa/Projects/pocs/coordenadas_por_cep'
 let g:netrw_dirhist_2='/Users/rafa/Projects/dotfiles'
+let g:netrw_dirhist_3='/usr/local/Cellar/nginx/1.0.2/html'
