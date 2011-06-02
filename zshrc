@@ -7,12 +7,12 @@ export ZSH_THEME="escobera"
 #export ZSH_THEME="robbyrussell"
 
 #plugins
-plugins=(git rails3)
+plugins=(git rails3 bundler)
 
 # Customize to your needs...
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/X11/bin:/usr/bin:/bin:/usr/sbin:/sbin
-export DYLD_LIBRARY_PATH="/usr/local/instantclient:$DYLD_LIBRARY_PATH"
-export LD_LIBRARY_PATH="/usr/local/instantclient:$LD_LIBRARY_PATH"
+#export DYLD_LIBRARY_PATH="/usr/local/instantclient:$DYLD_LIBRARY_PATH"
+#export LD_LIBRARY_PATH="/usr/local/instantclient:$LD_LIBRARY_PATH"
 
 #rvm 
 if [[ -s /Users/rafa/.rvm/scripts/rvm ]] ; then source /Users/rafa/.rvm/scripts/rvm ; fi
