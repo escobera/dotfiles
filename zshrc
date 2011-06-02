@@ -31,6 +31,8 @@ alias mongostop="sudo launchctl stop org.mongodb.mongod"
 alias apache2ctl="sudo /opt/local/apache2/bin/apachectl"
 alias l="ls -laHGq"
 alias vim="mvim -v"
+alias sfv="cksfv -f *.sfv"
+alias dirsfv="find . -name '*.sfv' -exec cksfv -g {} ';'"
 
 bindkey "^[[3~" delete-char
 export LSCOLORS="cxgxbxdxGxeHeHxbGxbHeH"
