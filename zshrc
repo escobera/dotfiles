@@ -33,8 +33,9 @@ alias l="ls -laHGq"
 alias vim="mvim -v"
 alias sfv="cksfv -f *.sfv"
 alias dirsfv="find . -name '*.sfv' -exec cksfv -g {} ';'"
+alias rake="noglob rake"
 
 bindkey "^[[3~" delete-char
 export LSCOLORS="cxgxbxdxGxeHeHxbGxbHeH"
-__rvm_project_rvmrc
+#__rvm_project_rvmrc
 
