@@ -16,3 +16,4 @@ echo "Linking stuffz..."
 ln -s ~/projects/dotfiles/vimrc ~/.vimrc
 ln -s ~/projects/dotfiles/gemrc ~/.gemrc
 ln -s ~/projects/dotfiles/pryrc ~/.pryrc
+ln -s ~/projects/dotfiles/zshrc ~/.zshrc
