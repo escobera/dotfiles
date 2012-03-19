@@ -38,3 +38,5 @@ alias rake="noglob rake"
 bindkey "^[[3~" delete-char
 export LSCOLORS="cxgxbxdxGxeHeHxbGxbHeH"
 
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

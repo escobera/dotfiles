@@ -22,7 +22,6 @@ Bundle 'gmarik/vundle'
 " Plugin Bundles
 " ---------------
 
-" " Navigation
 " Bundle 'ZoomWin'
 " Bundle 'wincent/Command-T'
 " " This fork is required due to remapping ; to :
@@ -34,7 +33,7 @@ Bundle 'gmarik/vundle'
 "Bundle 'mutewinter/vim-indent-guides'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'scrooloose/nerdtree'
-Bundle 'Rykka/ColorV'
+" Bundle 'Rykka/ColorV'
 Bundle 'nanotech/jellybeans.vim'
 " Bundle 'tomtom/quickfixsigns_vim'
 " " Commands
