@@ -35,6 +35,7 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'scrooloose/nerdtree'
 " Bundle 'Rykka/ColorV'
 Bundle 'nanotech/jellybeans.vim'
+Bundle 'jpo/vim-railscasts-theme'
 " Bundle 'tomtom/quickfixsigns_vim'
 " " Commands
 Bundle 'vim-scripts/tComment'
@@ -88,6 +89,12 @@ filetype plugin indent on  " Automatically detect file types. (must turn on afte
 " Note: This line MUST come before any <leader> mappings
 let mapleader=","
 
+" ---------------
+" Color
+" ---------------
+set background=dark
+colorscheme jellybeans
+
 " ----------------------------------------
 " Platform Specific Configuration
 " ----------------------------------------
@@ -111,10 +118,10 @@ elseif has('gui_macvim')
   " Custom Menlo font for Powerline
   " From: https://github.com/Lokaltog/vim-powerline/wiki/Patched-fonts
   set guifont=Menlo\ for\ Powerline:h12
-
   " Hide Toolbar in MacVim
   if has("gui_running")
     set guioptions=egmrt
+    colorscheme railscasts
   endif
 
   " Use option (alt) as meta key.
@@ -132,6 +139,7 @@ else
   " Hide Toolbar in MacVim
   if has("gui_running")
     set guioptions=egr
+    colorscheme railscasts
   endif
 
   " Use option (alt) as meta key.
@@ -143,11 +151,6 @@ endif
 " Regular Vim Configuration (No Plugins Needed)
 " ----------------------------------------
 
-" ---------------
-" Color
-" ---------------
-set background=dark
-colorscheme jellybeans
 
 " ---------------
 " Backups
