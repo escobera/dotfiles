@@ -17,4 +17,5 @@ ln -s ~/projects/dotfiles/vimrc ~/.vimrc
 ln -s ~/projects/dotfiles/gemrc ~/.gemrc
 ln -s ~/projects/dotfiles/pryrc ~/.pryrc
 ln -s ~/projects/dotfiles/zshrc ~/.zshrc
-ln -s ~/projects/dotfiles/escobera.zsh-theme  ~/.oh-my-zsh/themes/escobera.zsh-theme
+ln -s ~/projects/dotfiles/prompt_escobera_setup  ~/.zsh.d/modules/prompt/functions
+#ln -s ~/projects/dotfiles/escobera.zsh-theme  ~/.oh-my-zsh/themes/escobera.zsh-theme
