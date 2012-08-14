@@ -7,13 +7,15 @@ export ZSH_THEME="escobera"
 #export ZSH_THEME="robbyrussell"
 
 #plugins
-plugins=(git rails3 bundler)
+plugins=(git)
 
 # Customize to your needs...
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/X11/bin:/usr/bin:/bin:/usr/sbin:/sbin
 #export DYLD_LIBRARY_PATH="/usr/local/instantclient:$DYLD_LIBRARY_PATH"
 #export LD_LIBRARY_PATH="/usr/local/instantclient:$LD_LIBRARY_PATH"
-
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+#export JRUBY_OPTS=--1.8
 #rvm
 if [[ -s /Users/rafa/.rvm/scripts/rvm ]] ; then source /Users/rafa/.rvm/scripts/rvm ; fi
 # Comment this out to disable weekly auto-update checks
@@ -21,9 +23,9 @@ if [[ -s /Users/rafa/.rvm/scripts/rvm ]] ; then source /Users/rafa/.rvm/scripts/
 source $ZSH/oh-my-zsh.sh
 
 #Textmate
-export GIT_EDITOR="mate -w"
-export SVN_EDITOR="mate -w"
-
+export GIT_EDITOR="subl -w"
+export SVN_EDITOR="subl -w"
+export JRUBY_HOME="/Users/rafa/.rvm/rubies/jruby-1.6.7.2"
 #alias
 alias pgstart="sudo su postgres -c 'pg_ctl -D /opt/local/var/db/postgresql83/defaultdb start'"
 alias pgstop="sudo su postgres -c 'pg_ctl -D /opt/local/var/db/postgresql83/defaultdb stop'"
@@ -40,3 +42,8 @@ export LSCOLORS="cxgxbxdxGxeHeHxbGxbHeH"
 
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export RUBY_HEAP_MIN_SLOTS=1000000
+export RUBY_HEAP_SLOTS_INCREMENT=1000000
+export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
+export RUBY_GC_MALLOC_LIMIT=1000000000
+export RUBY_HEAP_FREE_MIN=500000
