@@ -36,6 +36,7 @@ alias vim="mvim -v"
 alias sfv="cksfv -f *.sfv"
 alias dirsfv="find . -name '*.sfv' -exec cksfv -g {} ';'"
 alias rake="noglob rake"
+alias cleanm3u="find ./ -iname '*.m3u' -exec rm '{}' \; -print && find ./ -iname '*.pls' -exec rm '{}' \; -print"
 
 bindkey "^[[3~" delete-char
 export LSCOLORS="cxgxbxdxGxeHeHxbGxbHeH"
