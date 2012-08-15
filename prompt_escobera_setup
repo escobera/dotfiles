@@ -5,7 +5,7 @@
 #   Steve Losh <steve@stevelosh.com>
 #   Bart Trojanowski <bart@jukie.net>
 #   Brian Carper <brian@carper.ca>
-#   escobera <escobera@gmail.com>
+#   Rafael Barbosa <rbocosta@gmail.com>
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 # Screenshots:
@@ -24,9 +24,9 @@ function virtualenv_info {
 function prompt_escobera_precmd {
   # Check for untracked files or updated submodules since vcs_info does not.
   if [[ -n $(git ls-files --other --exclude-standard 2> /dev/null) ]]; then
-    branch_format="(${_prompt_escobera_colors[1]}%b%f%u%c${_prompt_escobera_colors[4]}●%f)"
+    branch_format="(${_prompt_escobera_colors[1]}%b%f %c%u${_prompt_escobera_colors[4]}●%f)"
   else
-    branch_format="(${_prompt_escobera_colors[1]}%b%f%u%c)"
+    branch_format="(${_prompt_escobera_colors[1]}%b%f %c%u)"
   fi
 
   zstyle ':vcs_info:*:prompt:*' formats "${branch_format}"
@@ -73,17 +73,17 @@ function prompt_escobera_setup {
   #   %a - action (e.g. rebase-i)
   #   %R - repository path
   #   %S - path in the repository
-  local branch_format="(${_prompt_escobera_colors[1]}%b%f%u%c)"
+  local branch_format="(${_prompt_escobera_colors[1]}%b%f %c%u)"
   local action_format="(${_prompt_escobera_colors[5]}%a%f)"
   local unstaged_format="${_prompt_escobera_colors[2]}●%f"
   local staged_format="${_prompt_escobera_colors[5]}●%f"
 
   # Set vcs_info parameters.
-  zstyle ':vcs_info:*' enable bzr git hg svn
+  zstyle ':vcs_info:*' enable git
   zstyle ':vcs_info:*:prompt:*' check-for-changes true
   zstyle ':vcs_info:*:prompt:*' unstagedstr "${unstaged_format}"
   zstyle ':vcs_info:*:prompt:*' stagedstr "${staged_format}"
-  zstyle ':vcs_info:*:prompt:*' actionformats "${branch_format}${action_format}"
+  zstyle ':vcs_info:*:prompt:*' actionformats "${branch_format} ${action_format}"
   zstyle ':vcs_info:*:prompt:*' formats "${branch_format}"
   zstyle ':vcs_info:*:prompt:*' nvcsformats   ""
 
