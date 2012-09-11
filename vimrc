@@ -22,25 +22,15 @@ Bundle 'gmarik/vundle'
 " Plugin Bundles
 " ---------------
 
-" Bundle 'ZoomWin'
-" Bundle 'wincent/Command-T'
-" " This fork is required due to remapping ; to :
-" Bundle 'christoomey/vim-space'
-" Bundle 'Lokaltog/vim-easymotion'
-" Bundle 'mutewinter/LustyJuggler'
-" Bundle 'kien/ctrlp.vim'
+Bundle 'kien/ctrlp.vim'
 " " UI Additions
-"Bundle 'mutewinter/vim-indent-guides'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'scrooloose/nerdtree'
-" Bundle 'Rykka/ColorV'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'jpo/vim-railscasts-theme'
-" Bundle 'tomtom/quickfixsigns_vim'
 " " Commands
-Bundle 'vim-scripts/tComment'
+Bundle 'scrooloose/nerdcommenter'
 Bundle 'tpope/vim-surround'
-" Bundle 'tpope/vim-speeddating'
 Bundle 'tpope/vim-fugitive'
 " Bundle 'godlygeek/tabular'
 Bundle 'mileszs/ack.vim'
@@ -457,32 +447,17 @@ nmap <silent> <leader>wo :ZoomWin<CR>
 " ---------------
 " Ensure Ctrl-P isn't bound by default
 let g:ctrlp_map = ''
-if has('ruby')
-  " We've got Ruby, use Command T
+" Fallback on ctrlp.vim if Ruby for Command T not available
 
-  " Conditional Mappings
-  if has("gui_macvim")
-    nnoremap <silent><D-t> :CommandT<CR>
-  else
-    nnoremap <silent><M-t> :CommandT<CR>
-  endif
-
-  " Leader Commands
-  nnoremap <leader>t :CommandT<CR>
-  nnoremap <leader>u :CommandT %%<CR>
+" Conditional Mappings
+if has("gui_macvim")
+  let g:ctrlp_map = '<D-t>'
 else
-  " Fallback on ctrlp.vim if Ruby for Command T not available
-
-  " Conditional Mappings
-  if has("gui_macvim")
-    let g:ctrlp_map = '<D-t>'
-  else
-    let g:ctrlp_map = '<M-t>'
-  endif
-
-  " Leader Commands
-  nnoremap <leader>t :CtrlPRoot<CR>
+  let g:ctrlp_map = '<M-t>'
 endif
+
+" Leader Commands
+nnoremap <leader>t :CtrlPRoot<CR>
 
 " Ensure max height isn't too large. (for performance)
 let g:ctrlp_max_height = 10
