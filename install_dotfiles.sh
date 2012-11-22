@@ -18,4 +18,7 @@ ln -s ~/projects/dotfiles/gemrc ~/.gemrc
 ln -s ~/projects/dotfiles/pryrc ~/.pryrc
 ln -s ~/projects/dotfiles/zshrc ~/.zshrc
 ln -s ~/projects/dotfiles/prompt_escobera_setup  ~/.zsh.d/modules/prompt/functions
+ln -s '~/projects/dotfiles/Default (Linux).sublime-keymap'  '~/.config/sublime-text-2/Packages/User/Default (Linux).sublime-keymap'
+ln -s '~/projects/dotfiles/Preferences.sublime-settings'  '~/.config/sublime-text-2/Packages/User/Preferences.sublime-settings'
+ln -s '~/projects/dotfiles/DeleteLine.sublime-macro'  '~/.config/sublime-text-2/Packages/User/DeleteLine.sublime-macro'
 #ln -s ~/projects/dotfiles/escobera.zsh-theme  ~/.oh-my-zsh/themes/escobera.zsh-theme
