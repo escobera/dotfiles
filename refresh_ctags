@@ -1,7 +1,6 @@
 #!/usr/bin/env ruby
 require 'rubygems'
 require 'bundler'
-
 =begin
 This script was written to incorporate Bundler and Gemfile.lock into
 Vim's tag and file-finding tools.
@@ -16,6 +15,7 @@ if File.exist?('Gemfile.lock')
   lockfile_contents = Bundler.read_file('Gemfile.lock')
   lockfile = Bundler::LockfileParser.new(lockfile_contents)
   bundler_paths = lockfile.specs.map do |spec|
+    #next if spec.name =~ /linecache/
     spec.__materialize__
     spec.full_gem_path
   end
