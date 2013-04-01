@@ -25,6 +25,8 @@ Bundle 'gmarik/vundle'
 Bundle 'kien/ctrlp.vim'
 " " UI Additions
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'nanotech/jellybeans.vim'
+Bundle 'jpo/vim-railscasts-theme'
 " Bundle 'scrooloose/nerdtree'
 
 " " Commands
