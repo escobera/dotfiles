@@ -2,10 +2,9 @@
 require 'rubygems'
 require 'bundler'
 
-=begin
-This script was written to incorporate Bundler and Gemfile.lock into
-Vim's tag and file-finding tools.
-=end
+#This script was written to incorporate Bundler and Gemfile.lock into
+#Vim's tag and file-finding tools.
+
 
 # This code generates ctags.  If a Gemfile.lock is found
 # in the current directory, tags will be generated for
@@ -13,12 +12,6 @@ Vim's tag and file-finding tools.
 
 bundler_paths = []
 if File.exist?('Gemfile.lock')
-  # lockfile_contents = Bundler.read_file('Gemfile.lock')
-  # lockfile = Bundler::LockfileParser.new(lockfile_contents)
-  # bundler_paths = lockfile.specs.map do |spec|
-  #   spec.__materialize__
-  #   spec.full_gem_path
-  # end
   bundler_paths = Bundler.load.specs.map(&:full_gem_path)
 end
 

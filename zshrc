@@ -51,27 +51,25 @@ source "$OMZ/init.zsh"
 
 # Customize to your needs...
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/X11/bin:/usr/bin:/bin:/usr/sbin:/sbin
-#export DYLD_LIBRARY_PATH="/usr/local/instantclient:$DYLD_LIBRARY_PATH"
-#export LD_LIBRARY_PATH="/usr/local/instantclient:$LD_LIBRARY_PATH"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 #export JRUBY_OPTS=--1.8
 #rvm
-if [[ -s /Users/rafa/.rvm/scripts/rvm ]] ; then source /Users/rafa/.rvm/scripts/rvm ; fi
+if [[ -s /home/rafa/.rvm/scripts/rvm ]] ; then source /home/rafa/.rvm/scripts/rvm ; fi
 
 #Textmate
 export GIT_EDITOR="subl -w"
 export SVN_EDITOR="subl -w"
-export JRUBY_HOME="/Users/rafa/.rvm/rubies/jruby-1.6.7.2"
+export JRUBY_HOME="/home/rafa/.rvm/rubies/jruby-1.6.7.2"
 #alias
 alias l="ls -laHGq"
-alias vim="mvim -v"
 alias sfv="cksfv -f *.sfv"
 alias dirsfv="find . -name '*.sfv' -exec cksfv -g {} ';'"
 alias rake="noglob rake"
 
 #git
 alias gl="git pull"
+alias glr="git pull --rebase"
 alias gp="git push"
 alias gca="git commit -a"
 alias gst="git status"
@@ -79,7 +77,7 @@ alias gst="git status"
 bindkey "^[[3~" delete-char
 export LSCOLORS="cxgxbxdxGxeHeHxbGxbHeH"
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=$PATH:$HOME/.rvm/bin:$HOME/bin # Add RVM to PATH for scripting
 export RUBY_HEAP_MIN_SLOTS=1000000
 export RUBY_HEAP_SLOTS_INCREMENT=1000000
 export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
@@ -89,3 +87,4 @@ export RUBY_HEAP_FREE_MIN=500000
 HISTORY_SUBSTRING_SEARCH_GLOBBING_FLAGS="I"
 setopt MENU_COMPLETE
 unsetopt CORRECT
+export TERM="xterm-256color"
