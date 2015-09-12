@@ -1,17 +1,50 @@
 {
-	"color_scheme": "Packages/Color Scheme - Default/Twilight.tmTheme",
-	"font_face": "DejaVu Sans Mono",
-	"font_options":
+	"color_scheme": "Packages/Tomorrow Color Schemes/Tomorrow-Night.tmTheme",
+	"draw_white_space": "all",
+	"file_exclude_patterns":
 	[
-		"bold",
-		"subpixel_antialias"
+		"*.DS_store",
+		"*.gem",
+		"*.gz",
+		"*.jar",
+		"*.sassc",
+		"*.scssc",
+		"*.xap",
+		"*.zip",
+		".gitkeep",
+		"dump.rdb",
+		".rake_tasks~",
+		"*.o",
+		".tags"
 	],
-	"font_size": 16,
+	"flatland_sidebar_tree_xlarge": true,
+	"folder_exclude_patterns":
+	[
+		".svn",
+		".git",
+		".hg",
+		"CVS",
+		".sass-cache",
+		"tmp/cache/*",
+		".bin",
+		".bundle",
+		".yardoc",
+		"coverage",
+		"log",
+		"tmp",
+		"build",
+		"pkg"
+	],
+	"font_face": "Source Code Pro",
+	"font_size": 20,
 	"highlight_line": true,
+	"hot_exit": false,
 	"ignored_packages":
 	[
 		"Vintage"
 	],
+	"remember_open_files": false,
 	"tab_size": 2,
+	"theme": "Flatland Dark.sublime-theme",
 	"translate_tabs_to_spaces": true
 }

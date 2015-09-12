@@ -4,7 +4,7 @@
   { "keys": ["ctrl+r"], "command": "show_overlay", "args": {"overlay": "goto", "text": "@"} },
   { "keys": ["ctrl+g"], "command": "show_overlay", "args": {"overlay": "goto", "text": ":"} },
   { "keys": ["ctrl+;"], "command": "show_overlay", "args": {"overlay": "goto", "text": "#"} },
-  { "keys": ["ctrl+e"], "command": "run_macro_file", "args": {"file": "Packages/User/DeleteLine.sublime-macro"} },
+  { "keys": ["ctrl+e"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} },
   { "keys": ["ctrl+'"], "command": "show_panel", "args": {"panel": "console", "toggle": true} },
   // swap the keybindings for paste and paste_and_indent
   { "keys": ["ctrl+v"], "command": "paste_and_indent" },

@@ -1,43 +1,17 @@
 #!/usr/bin/env ruby
-require 'rubygems'
-require 'bundler'
-
-#This script was written to incorporate Bundler and Gemfile.lock into
-#Vim's tag and file-finding tools.
-
-
-# This code generates ctags.  If a Gemfile.lock is found
-# in the current directory, tags will be generated for
-# every gem referenced in the Gemfile.
-
-bundler_paths = []
-if File.exist?('Gemfile.lock')
-  bundler_paths = Bundler.load.specs.map(&:full_gem_path)
+if !File.exist?('Gemfile.lock')
+  puts "No Gemfile.lock found. Run bundle install"
 end
 
+require 'bundler'
+
+bundler_paths = Bundler.load.specs.map(&:full_gem_path)
 tags_file    = ".tags"
 opts         = "--extra=+f -R -f #{tags_file}"
-exclude_dirs = "--exclude=.git --exclude=log --exclude=.svn"
+exclude_dirs = "--exclude=.git --exclude=log --exclude=.svn --exclude=tmp --exclude=*.js --exclude=*.hpp --exclude=*.h"
 ctag_paths   = "* #{bundler_paths.map {|x| x + '/*'}.join(' ')}"
 command      = "ctags #{opts} #{exclude_dirs} #{ctag_paths} 2> /dev/null"
 
 puts "Processing ctags..."
 system command
 puts "Wrote ctags to '#{tags_file}'"
-
-# This code generates a script that loads Bundler paths into vim.
-# To use this script in vim, put this command into your .vimrc:
-#
-# autocmd BufNewFile,BufRead *.rb silent! source .paths.vim<cr>
-
-# Vim only
-# system "rm -f .paths.vim"
-# unless bundler_paths.empty?
-#   gem_paths  = Gem.all_load_paths
-#   vim_paths  = bundler_paths.map {|x| x = x + '/lib'} - gem_paths
-#   paths_file = ".paths.vim"
-#   File.open(paths_file, 'w') do |file|
-#     vim_paths.each {|x| file.puts "silent! set path+=#{x}" }
-#   end
-#   puts "Wrote #{vim_paths.length} vim paths to '#{paths_file}'"
-# end
