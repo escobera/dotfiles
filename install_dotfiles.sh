@@ -79,8 +79,8 @@ EOF
   print_step "Adding my .zshrc and .zimrc"
   rm ~/.zimrc
   rm ~/.zshrc
-  mv ./configs/zimrc ~/.zimrc
-  mv ./configs/zshrc ~/.zshrc
+  mv ./files/zimrc ~/.zimrc
+  mv ./files/zshrc ~/.zshrc
 fi
 
 print_step "Install ASDF and plugins"
@@ -89,7 +89,10 @@ if [ ! -d $HOME/.asdf ] ; then
 fi
 
 print_step "Install dracula color scheme"
- 
+if [ ! -f $HOME/.config/tilix/schemes/Dracula.json ] ; then
+  mkdir -p $HOME/.config/tilix/schemes
+  mv ./files/Dracula.json $HOME/.config/tilix/schemes/Dracula.json
+fi 
 
 print_step "Fix TILIX configs"
 if [ ! -f /etc/profile.d/vte.sh ] ; then
