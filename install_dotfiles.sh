@@ -27,7 +27,7 @@ install_source_code_pro () {
 }
 
 install_asdf () {
-  git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.7.6
+  git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.7.8
   . $HOME/.asdf/asdf.sh
   . $HOME/.asdf/completions/asdf.bash
   
@@ -35,23 +35,25 @@ install_asdf () {
   asdf plugin add elixir
   asdf plugin add nodejs
   asdf plugin add ruby
+  asdf plugin-add java https://github.com/halcyon/asdf-java.git
+  
   bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
 
-  asdf install ruby 2.6.4
-  asdf global ruby 2.6.4
+  ASDF_CONCURRENCY=4 asdf install ruby 2.6.5
+  asdf global ruby 2.6.5
 
-  asdf install erlang 22.2.1
-  asdf global erlang 22.2.1
+  # asdf install erlang 22.2.1
+  # asdf global erlang 22.2.1
 
-  asdf install elixir 1.9.4
-  asdf global elixir 1.9.4
+  # asdf install elixir 1.9.4
+  # asdf global elixir 1.9.4
   
-  asdf install nodejs 12.14.0
-  asdf global nodejs 12.14.0
+  # asdf install nodejs 12.14.0
+  # asdf global nodejs 12.14.0
 }
 
 print_step "Installing dependencies"
-if [ ! -f /usr/bin/curl ] ; then
+if [ ! -f /usr/bin/zsh ] ; then
   sudo apt update
   sudo apt install --assume-yes zsh git vim automake autoconf libreadline-dev \
   libncurses-dev libssl-dev libyaml-dev \
@@ -67,20 +69,14 @@ fi
 print_step "Installing ZimFW"
 if [ ! -d $HOME/.zim ] ; then
   touch ~/.zshrc
-  /bin/zsh <<'EOF'
-    git clone --recursive https://github.com/zimfw/zimfw.git ${ZDOTDIR:-${HOME}}/.zim
-    for template_file in ${ZDOTDIR:-${HOME}}/.zim/templates/*; do
-      user_file="${ZDOTDIR:-${HOME}}/.${template_file:t}"
-      cat ${template_file} ${user_file}(.N) > ${user_file}.tmp && mv ${user_file}{.tmp,}
-    done
-EOF
+  curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh
   chsh -s /bin/zsh
 
   print_step "Adding my .zshrc and .zimrc"
   rm ~/.zimrc
   rm ~/.zshrc
-  mv ./files/zimrc ~/.zimrc
-  mv ./files/zshrc ~/.zshrc
+  cp ./files/zimrc ~/.zimrc
+  cp ./files/zshrc ~/.zshrc
 fi
 
 print_step "Install ASDF and plugins"
@@ -91,7 +87,7 @@ fi
 print_step "Install dracula color scheme"
 if [ ! -f $HOME/.config/tilix/schemes/Dracula.json ] ; then
   mkdir -p $HOME/.config/tilix/schemes
-  mv ./files/Dracula.json $HOME/.config/tilix/schemes/Dracula.json
+  cp ./files/Dracula.json $HOME/.config/tilix/schemes/Dracula.json
 fi 
 
 print_step "Fix TILIX configs"
